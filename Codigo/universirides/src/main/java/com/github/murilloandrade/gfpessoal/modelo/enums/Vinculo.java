@@ -1,4 +1,4 @@
-package com.github.gavioesdoforro.universirides.modelo.enums;
+package com.github.murilloandrade.gfpessoal.modelo.enums;
 
 public enum Vinculo {
     Discente, Docente, Servidor, Comunidade;

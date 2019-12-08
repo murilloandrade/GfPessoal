@@ -1,8 +1,8 @@
-package com.github.gavioesdoforro.universirides.configuracao;
+package com.github.murilloandrade.gfpessoal.configuracao;
 
-import com.github.gavioesdoforro.universirides.modelo.*;
-import com.github.gavioesdoforro.universirides.modelo.enums.*;
-import com.github.gavioesdoforro.universirides.repositorio.*;
+import com.github.murilloandrade.gfpessoal.modelo.*;
+import com.github.murilloandrade.gfpessoal.modelo.enums.*;
+import com.github.murilloandrade.gfpessoal.repositorio.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;

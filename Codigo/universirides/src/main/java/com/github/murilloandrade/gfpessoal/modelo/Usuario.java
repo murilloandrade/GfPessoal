@@ -1,6 +1,6 @@
-package com.github.gavioesdoforro.universirides.modelo;
+package com.github.murilloandrade.gfpessoal.modelo;
 
-import com.github.gavioesdoforro.universirides.modelo.enums.Vinculo;
+import com.github.murilloandrade.gfpessoal.modelo.enums.Vinculo;
 
 import javax.persistence.*;
 import java.util.*;

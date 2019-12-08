@@ -1,4 +1,4 @@
-package com.github.gavioesdoforro.universirides;
+package com.github.murilloandrade.gfpessoal;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class UniversiridesApplicationTests {
+public class GFPessoalApplicationTests {
 
     @Test
     public void contextLoads() {

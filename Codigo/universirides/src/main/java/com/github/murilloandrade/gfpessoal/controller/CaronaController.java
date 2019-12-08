@@ -1,8 +1,8 @@
-package com.github.gavioesdoforro.universirides.controller;
+package com.github.murilloandrade.gfpessoal.controller;
 
-import com.github.gavioesdoforro.universirides.modelo.*;
-import com.github.gavioesdoforro.universirides.modelo.enums.*;
-import com.github.gavioesdoforro.universirides.repositorio.*;
+import com.github.murilloandrade.gfpessoal.modelo.*;
+import com.github.murilloandrade.gfpessoal.modelo.enums.*;
+import com.github.murilloandrade.gfpessoal.repositorio.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

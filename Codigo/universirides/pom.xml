@@ -8,11 +8,11 @@
         <version>2.1.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.github.gavioes-do-forro</groupId>
-    <artifactId>universirides</artifactId>
+    <groupId>com.github.murilloandrade</groupId>
+    <artifactId>gfpessoal</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>universirides</name>
-    <description>Projeto da disciplina Desenvolvimento de Software para Web</description>
+    <name>gfpessoal</name>
+    <description>Projeto da disciplina Engenharia Economica para Software</description>
 
     <properties>
         <java.version>1.8</java.version>

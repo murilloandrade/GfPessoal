@@ -1,9 +1,7 @@
-package com.github.gavioesdoforro.universirides.repositorio;
+package com.github.murilloandrade.gfpessoal.repositorio;
 
-import com.github.gavioesdoforro.universirides.modelo.Carona;
+import com.github.murilloandrade.gfpessoal.modelo.Carona;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.github.gavioesdoforro.universirides.modelo;
+package com.github.murilloandrade.gfpessoal.modelo;
 
 import javax.persistence.*;
 

@@ -1,4 +1,4 @@
-package com.github.gavioesdoforro.universirides.configuracao;
+package com.github.murilloandrade.gfpessoal.configuracao;
 
 import org.springframework.context.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
