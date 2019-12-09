@@ -2,18 +2,18 @@ package com.github.murilloandrade.gfpessoal.modelo;
 
 import com.github.murilloandrade.gfpessoal.modelo.enums.*;
 import javax.persistence.*;
+import java.time.LocalDateTime; // Import the LocalDateTime class
+import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
 
 @Entity
-public class Carona extends ObjetoPadrao {
-    private String bairro;
+public class GastoGanho extends ObjetoPadrao {
+    private LocalDateTime dataHora;
 
     private String descricao;
 
-    private Status status;
+    private double valor;
 
     private Tipo tipo;
-
-    private Turno turno;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "usuario_id", nullable = false)
@@ -35,12 +35,12 @@ public class Carona extends ObjetoPadrao {
         this.tipo = tipo;
     }
 
-    public String getBairro() {
-        return bairro;
+    public LocalDateTime getDataHora() {
+        return dataHora;
     }
 
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
     }
 
     public Usuario getUsuario() {
@@ -51,32 +51,27 @@ public class Carona extends ObjetoPadrao {
         this.usuario = usuario;
     }
 
-    public Turno getTurno() {
-        return turno;
+    public double getValor() {
+        return valor;
     }
 
-    public void setTurno(Turno turno) {
-        this.turno = turno;
-    }
-
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 
     @Override
     public String toString() {
-        return "Carona{" +
+        return "GastoGanho{" +
                 "descricao='" + descricao + '\'' +
                 ", tipo=" + tipo +
-                ", turno=" + turno +
-                ", bairro='" + bairro + '\'' +
+                ", valor=" + valor +
                 ", usuario=" + usuario.getNome() +
                 '}';
     }
 
+    public String retornaHoraFormatada(LocalDateTime dataHora) {
+        DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String formattedDate = dataHora.format(formater);
+        return formattedDate;
+    }
 }

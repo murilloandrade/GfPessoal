@@ -1,19 +1,15 @@
 package com.github.murilloandrade.gfpessoal.modelo;
 
-import com.github.murilloandrade.gfpessoal.modelo.enums.Vinculo;
-
 import javax.persistence.*;
 import java.util.*;
 
 @Entity
 public class Usuario extends ObjetoPadrao {
     @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY)
-    private List<Carona> caronasList = new ArrayList<>();
+    private List<GastoGanho> gastoGanhosList = new ArrayList<>();
 
     private String nome;
     private String whatsApp;
-
-    private Vinculo vinculo;
 
     public String getNome() {
         return nome;
@@ -31,20 +27,12 @@ public class Usuario extends ObjetoPadrao {
         this.whatsApp = whatsApp;
     }
 
-    public Vinculo getVinculo() {
-        return vinculo;
+    public List<GastoGanho> getGastoGanhosList() {
+        return gastoGanhosList;
     }
 
-    public void setVinculo(Vinculo vinculo) {
-        this.vinculo = vinculo;
-    }
-
-    public List<Carona> getCaronasList() {
-        return caronasList;
-    }
-
-    public void setCaronasList(List<Carona> caronasList) {
-        this.caronasList = caronasList;
+    public void setGastoGanhosList(List<GastoGanho> gastoGanhosList) {
+        this.gastoGanhosList = gastoGanhosList;
     }
 
     @Override
@@ -53,8 +41,7 @@ public class Usuario extends ObjetoPadrao {
                 "id=" + this.getId() +
                 ", nome='" + nome + '\'' +
                 ", whatsApp='" + whatsApp + '\'' +
-                ", vinculo=" + vinculo +
-                ", caronasList=" + caronasList +
+                ", gastoGanhosList=" + gastoGanhosList +
                 '}';
     }
 }

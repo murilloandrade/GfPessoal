@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.LocalDateTime;
+
 @Configuration
 public class Instanciacao implements CommandLineRunner {
     @Autowired
-    IRepositorioCarona iRepositorioCarona;
+    IRepositorioGastoGanho iRepositorioGastoGanho;
 
     @Autowired
     IRepositorioUsuario iRepositorioUsuario;
@@ -20,17 +22,15 @@ public class Instanciacao implements CommandLineRunner {
         Usuario usuario = new Usuario();
         usuario.setNome("Joao");
         usuario.setWhatsApp("62111111111");
-        usuario.setVinculo(Vinculo.Discente);
 
-        Carona carona = new Carona();
-        carona.setTipo(Tipo.Ida);
-        carona.setTurno(Turno.Verspertino);
-        carona.setBairro("Sao Judas");
-        carona.setUsuario(usuario);
-        carona.setDescricao("Indo para a UFG as 12:00");
-        carona.setStatus(Status.Aberto);
+        GastoGanho gastoGanho = new GastoGanho();
+        gastoGanho.setTipo(Tipo.Ganho);
+        gastoGanho.setUsuario(usuario);
+        gastoGanho.setDescricao("Almoço");
+        gastoGanho.setValor(12.99);
+        gastoGanho.setDataHora(LocalDateTime.now());
 
         System.out.println(iRepositorioUsuario.save(usuario));
-        System.out.println(iRepositorioCarona.save(carona));
+        System.out.println(iRepositorioGastoGanho.save(gastoGanho));
     }
 }
