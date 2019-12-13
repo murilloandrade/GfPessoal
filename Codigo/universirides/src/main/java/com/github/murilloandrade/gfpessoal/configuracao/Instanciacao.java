@@ -22,12 +22,13 @@ public class Instanciacao implements CommandLineRunner {
         Usuario usuario = new Usuario();
         usuario.setNome("Joao");
         usuario.setWhatsApp("62111111111");
+        usuario.setSaldo(20.25);
 
         GastoGanho gastoGanho = new GastoGanho();
         gastoGanho.setTipo(Tipo.Ganho);
         gastoGanho.setUsuario(usuario);
-        gastoGanho.setDescricao("Almoço");
-        gastoGanho.setValor(12.99);
+        gastoGanho.setDescricao("Aposta com o Paulo");
+        gastoGanho.setValor(20.25);
         gastoGanho.setDataHora(LocalDateTime.now());
 
         System.out.println(iRepositorioUsuario.save(usuario));

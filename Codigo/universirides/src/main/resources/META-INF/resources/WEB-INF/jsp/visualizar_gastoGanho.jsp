@@ -7,6 +7,12 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>GFPessoal</title>
+    <style>
+        body {background-color: black; color: aqua;}
+        tr {color: aqua; border-style: solid; border-color:aqua;}
+        input { border-style: solid; border-color:aqua;}
+        form:select { border-style: solid; border-color:aqua;}
+    </style>
 </head>
 <body>
 <div align="center">
@@ -41,6 +47,9 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
             </tr>
         </c:forEach>
     </table>
+
+    <h3>Saldo atual: ${saldo}</h3>
+
 </div>
 </body>
 </html>

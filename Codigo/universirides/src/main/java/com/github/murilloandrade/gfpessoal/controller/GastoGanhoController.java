@@ -23,8 +23,10 @@ public class GastoGanhoController {
     @RequestMapping("/")
     public ModelAndView home() {
         List<GastoGanho> listGastoGanhos = repositorioGastoGanho.findAll();
+        double Saldo = repositorioUsuario.findById((long) 1).get().getSaldo();
         ModelAndView mav = new ModelAndView("visualizar_gastoGanho");
         mav.addObject("listGastoGanhos", listGastoGanhos);
+        mav.addObject("saldo", Saldo);
         return mav;
     }
 
@@ -41,6 +43,9 @@ public class GastoGanhoController {
         Usuario usuario = repositorioUsuario.findById((long) 1).get();
         gastoGanho.setUsuario(usuario);
         gastoGanho.setDataHora(LocalDateTime.now());
+        if(gastoGanho.getTipo()==Tipo.Ganho) {
+            usuario.setSaldo(usuario.getSaldo() + gastoGanho.getValor());
+        } else usuario.setSaldo(usuario.getSaldo() - gastoGanho.getValor());
         repositorioGastoGanho.save(gastoGanho);
         return "redirect:/gastoGanho/";
     }
@@ -50,6 +55,9 @@ public class GastoGanhoController {
         Usuario usuario = repositorioUsuario.findById((long) 1).get();
         gastoGanho.setUsuario(usuario);
         gastoGanho.setDataHora(LocalDateTime.now());
+        if(gastoGanho.getTipo()==Tipo.Ganho) {
+            usuario.setSaldo(usuario.getSaldo() + gastoGanho.getValor());
+        } else usuario.setSaldo(usuario.getSaldo() - gastoGanho.getValor());
         repositorioGastoGanho.save(gastoGanho);
         return "redirect:/gastoGanho/";
     }
@@ -57,15 +65,24 @@ public class GastoGanhoController {
     @RequestMapping("/edit")
     public ModelAndView editGastoGanhoForm(@RequestParam long id, Map<String, Object> model) {
         ModelAndView mav = new ModelAndView("edit_gastoGanho");
+        Usuario usuario = repositorioUsuario.findById((long) 1).get();
         GastoGanho gastoGanho = repositorioGastoGanho.getOne(id);
         mav.addObject("gastoGanho", gastoGanho);
         model.put("gastoGanho", gastoGanho);
         model.put("tipos", Tipo.values());
+        if(gastoGanho.getTipo()==Tipo.Ganho) {
+            usuario.setSaldo(usuario.getSaldo() - gastoGanho.getValor());
+        } else usuario.setSaldo(usuario.getSaldo() + gastoGanho.getValor());
         return mav;
     }
 
     @RequestMapping("/delete")
     public String deleteGastoGanhoForm(@RequestParam long id) {
+        Usuario usuario = repositorioUsuario.findById((long) 1).get();
+        GastoGanho gastoganho = repositorioGastoGanho.findById(id).get();
+        if(gastoganho.getTipo()==Tipo.Ganho) {
+            usuario.setSaldo(usuario.getSaldo() - gastoganho.getValor());
+        } else usuario.setSaldo(usuario.getSaldo() + gastoganho.getValor());
         repositorioGastoGanho.deleteById(id);
         return "redirect:/gastoGanho/";
     }

@@ -7,6 +7,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>GFPessoal</title>
+    <style>
+        body {background-color: black; color: aqua;}
+        tr {color: aqua; border-style: solid; border-color:aqua;}
+        input { border-style: solid; border-color:aqua;}
+        form:select { border-style: solid; border-color:aqua;}
+    </style>
 </head>
 <body>
 <div align="center">

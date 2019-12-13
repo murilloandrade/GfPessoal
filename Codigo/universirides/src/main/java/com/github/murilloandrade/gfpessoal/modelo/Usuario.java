@@ -10,6 +10,7 @@ public class Usuario extends ObjetoPadrao {
 
     private String nome;
     private String whatsApp;
+    private double saldo;
 
     public String getNome() {
         return nome;
@@ -25,6 +26,14 @@ public class Usuario extends ObjetoPadrao {
 
     public void setWhatsApp(String whatsApp) {
         this.whatsApp = whatsApp;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 
     public List<GastoGanho> getGastoGanhosList() {
